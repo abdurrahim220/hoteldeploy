@@ -25,7 +25,7 @@ app.use(cookieParser())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: "*",
+  origin: "http://localhost:5173" || "https://hotelbook-n2qk.onrender.com",
   credentials: true
 }));
 
@@ -38,8 +38,8 @@ app.use("/api/auth", authRoutes)
 app.use("/api/users", userRoutes)
 app.use("/api/my-hotels", hotelRoutes)
 
-app.get("*",(req:Request,res:Response)=>{
-  res.sendFile(path.join(__dirname,"../../frontend/dist/index.html"))
+app.get("*", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"))
 })
 
 app.get("/api/text", async (req: Request, res: Response) => {
