@@ -4,6 +4,7 @@ import { SignInFormData } from "../pages/Login/Login";
 import { RegisterFormData } from "../pages/Register/Register";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 // const API_BASE_URL = `http://localhost:5000/api`
 
 export const register = async (formData: RegisterFormData) => {
